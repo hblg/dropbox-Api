@@ -1,7 +1,7 @@
 <?php
 // Include the Dropbox SDK libraries. Using Composer.
-require_once "vendor/autoload.php";
-use \Dropbox as dbx;
+require 'vendor/autoload.php';
+use Dropbox as dbx;
 $appInfo = dbx\AppInfo::loadFromJsonFile("./app.json");
 $webAuth = new dbx\WebAuthNoRedirect($appInfo, "PHP-Example/1.0");
 // We first need to send the user to the app approval page. We get the URL for that page by calling the start method.
@@ -19,3 +19,4 @@ $dbxClient = new dbx\Client($accessToken, "PHP-Example/1.0");
 $accountInfo = $dbxClient->getAccountInfo();
 print_r($accountInfo);
 ?>
+
